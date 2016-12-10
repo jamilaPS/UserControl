@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CadastroUsuarioPage } from '../cadastro-usuario/cadastro-usuario';
+import { PrincipalPage } from '../principal/principal';
 import { AlertController } from 'ionic-angular';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 
 @Component({
   selector: 'page-home',
@@ -20,19 +20,14 @@ export class HomePage {
 
   entrar(){
     this.http.post(this.url, this.usuario).map(res => res.json()).subscribe(data => {
-      console.log("chegou aqui!");
       console.log(data);
-      if(data.status == 401){
-        this.showAlert('Atenção!', 'Email ou senha incorretos.')
+      if(data.mensagem != undefined){
+        this.showAlert('Atenção!', data.mensagem);
       }
-      else if(data.status == 200){
-        console.log("chegou aqui");
-        console.log(data);
+      else{
          window.sessionStorage.setItem('usuarioLogado', JSON.stringify(data));
+         this.navCtrl.push(PrincipalPage);
        }
-     else{
-       this.showAlert('Atenção!', 'Ocorreu um erro, por favor tente novamente.')
-     }
     });
    }
 

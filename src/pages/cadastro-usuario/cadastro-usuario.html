@@ -16,30 +16,30 @@
 <ion-list>
   <ion-item>
     <ion-label floating>Nome</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.nome"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>CPF</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.cpf"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Email</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Senha</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.senha"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Data de Nascimento</ion-label>
-    <ion-input type="date"></ion-input>
+    <ion-input type="date" [(ngModel)]="usuario.dataNascimento"></ion-input>
   </ion-item>
 </ion-list>
 
-<button ion-button round>Salvar</button>
+<button ion-button round (click)="cadastrar()">Salvar</button>
 <button ion-button round color="danger" navPop>Cancelar</button>
 </ion-content>

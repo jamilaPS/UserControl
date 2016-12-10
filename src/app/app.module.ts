@@ -3,12 +3,14 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CadastroUsuarioPage } from '../pages/cadastro-usuario/cadastro-usuario';
+import { PrincipalPage } from '../pages/principal/principal';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CadastroUsuarioPage
+    CadastroUsuarioPage,
+    PrincipalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,7 +19,8 @@ import { CadastroUsuarioPage } from '../pages/cadastro-usuario/cadastro-usuario'
   entryComponents: [
     MyApp,
     HomePage,
-    CadastroUsuarioPage
+    CadastroUsuarioPage,
+    PrincipalPage
   ],
   providers: []
 })
